@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Add Locations {% endblock title %}
+
+{% block body %}
+<br>
+<form method = 'POST' action = '/add_location'>
+{% csrf_token %}
+  <div class="container mb-3 my-5">
+    <label for="LocationID" class="form-label"><strong>Location ID</strong></label>
+    <input type="text" class="form-control" id="LocationID" name = "LocationID" aria-describedby="LocationIDhelp">
+    <div id="LocationIDhelp" class="form-text mb-3">Enter the location ID for a new Location.</div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endblock body %}

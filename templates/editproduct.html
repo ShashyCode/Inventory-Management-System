@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit Products {% endblock title %}
+
+{% block body %}
+<br>
+<form method = 'POST' action = "/edit_product/{{item.pk}}">
+{% csrf_token %}
+  <div class="container mb-3 my-5">
+    <label for="ProductID" class="form-label"><strong>Product ID</strong></label>
+    <input type="text" class="form-control" id="ProductID" name = "ProductID" placeholder = "{{item.ProductId}}" aria-describedby="ProductIDhelp">
+    <div id="ProductIDhelp" class="form-text mb-3">Edit the Product ID.</div>
+
+    <label for="LocationID" class="form-label"><strong>Location ID</strong></label>
+    <input type="text" class="form-control" id="LocationID" name = "LocationID" placeholder = "{{item.locationid}}" aria-describedby="LocationIDhelp">
+    <div id="LocationIDhelp" class="form-text mb-3">Edit the Location ID for the Product.</div>
+
+    <label for="Quantity" class="form-label"><strong>Quantity</strong></label>
+    <input type="text" class="form-control" id="Quantity" name = "Quantity" placeholder = "{{item.qt}}" aria-describedby="Quantityhelp">
+    <div id="Quantityhelp" class="form-text mb-3">Edit the Quantity for the Product.</div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endblock body %}

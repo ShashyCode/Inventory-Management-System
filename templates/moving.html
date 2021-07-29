@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} Moving {% endblock title %}
+
+{% block body %}
+<br>
+<div class = "container mb-3">
+<a class="btn btn-dark" href="movement" role="button">View Movement Logs</a>
+</div>
+
+<br>
+<form method = 'POST' action = '/movings'>
+{% csrf_token %}
+  <div class="container mb-3 my-5">
+    <label for="ProductID" class="form-label"><strong>Product ID</strong></label>
+    <input type="text" class="form-control" id="ProductID" name = "ProductID" aria-describedby="ProductIDhelp">
+    <div id="ProductIDhelp" class="form-text mb-3">Enter the Product ID for the Product.</div>
+
+    <label for="MovementID" class="form-label"><strong>Movement ID</strong></label>
+    <input type="text" class="form-control" id="MovementID" name = "MovementID" aria-describedby="MovementIDhelp">
+    <div id="MovementIDhelp" class="form-text mb-3">Enter the Movement ID for the Product.</div>
+
+    <label for="Quantity" class="form-label"><strong>Quantity</strong></label>
+    <input type="text" class="form-control" id="Quantity" name = "Quantity" aria-describedby="Quantityhelp">
+    <div id="Quantityhelp" class="form-text mb-3">Enter the Quantity for the Product.</div>
+
+    <label for="From_Location" class="form-label"><strong>Origin</strong></label>
+    <input type="text" class="form-control" id="From_Location" name = "From_Location" aria-describedby="From_Locationhelp">
+    <div id="From_Locationhelp" class="form-text mb-3">Enter the Origin for the Product.</div>
+
+    <label for="To_Location" class="form-label"><strong>Destination</strong></label>
+    <input type="text" class="form-control" id="To_Location" name = "To_Location" aria-describedby="To_Locationhelp">
+    <div id="To_Locationhelp" class="form-text mb-3">Enter the Destination for the Product.</div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+{% endblock body %}

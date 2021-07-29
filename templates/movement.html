@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Movement Logs {% endblock title %}
+
+{% block body %}
+<div class="container">
+    <br>
+    <br>
+    <h4 class = "text-center"> Currently Viewing Movement Logs </h4>
+    <br>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Movement Id</th>
+                <th scope="col">Product Id</th>
+                <th scope="col">Origin</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{item.pk}}</td>
+                <td>{{item.movementId}}</td>
+                <td>{{item.ProductId}}</td>
+                <td>{{item.from_location}}</td>
+                <td>{{item.to_location}}</td>
+                <td>{{item.qty}}</td>
+                <td>{{item.timestamp}}</td>
+                <td><a class="btn btn-danger btn-sm" href="movement/{{item.pk}}" role="button">Delete</a></td>
+            </tr>{% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}

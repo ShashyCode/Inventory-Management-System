@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %} Home 
+
+{% block body %} 
+
+<br>
+<div class = "container">
+<a class="btn btn-dark" href="add_product" role="button">Add Products</a>
+
+<br>
+<br>
+<h4 class = "text-center"> Currently Viewing Products </h4>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ProductId</th>
+      <th scope="col">LocationId</th>
+      <th scope="col">Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for item in items %}
+            <tr>
+                <td>{{item.pk}}</td>
+                <td>{{item.ProductId}}</td>
+                <td>{{item.locationid}}</td>
+                <td>{{item.qt}}</td>
+                <td><a class="btn btn-dark btn-sm" href="edit_product/{{item.pk}}" role="button">Edit</a></td>
+                <td><a class="btn btn-danger btn-sm" href="home/{{item.pk}}" role="button">Delete</a></td>
+            </tr>{% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% endblock body %} 

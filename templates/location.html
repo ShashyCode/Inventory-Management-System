@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Locations {% endblock title %}
+
+{% block body %}
+<div class="container">
+    <br>
+    <a class="btn btn-dark" href="add_location" role="button">Add Locations</a>
+    <br>
+    <br>
+    <h4 class = "text-center"> Currently Viewing Locations </h4>
+    <br>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">LocationId</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{item.locationid}}</td>
+                <td><a class="btn btn-dark btn-sm" href="edit_location/{{item.pk}}" role="button">Edit</a></td>
+                <td><a class="btn btn-danger btn-sm" href="locations/{{item.pk}}" role="button">Delete</a></td>
+            </tr>{% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}

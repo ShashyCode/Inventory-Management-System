@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Add Products {% endblock title %}
+
+{% block body %}
+<br>
+<form method = 'POST' action = '/add_product'>
+{% csrf_token %}
+  <div class="container mb-3 my-5">
+    <label for="ProductID" class="form-label"><strong>Product ID</strong></label>
+    <input type="text" class="form-control" id="ProductID" name = "ProductID" aria-describedby="ProductIDhelp">
+    <div id="ProductIDhelp" class="form-text mb-3">Enter the Product ID for a new Product.</div>
+
+    <label for="LocationID" class="form-label"><strong>Location ID</strong></label>
+    <input type="text" class="form-control" id="LocationID" name = "LocationID" aria-describedby="LocationIDhelp">
+    <div id="LocationIDhelp" class="form-text mb-3">Enter the Location ID for the Product.</div>
+
+    <label for="Quantity" class="form-label"><strong>Quantity</strong></label>
+    <input type="text" class="form-control" id="Quantity" name = "Quantity" aria-describedby="Quantityhelp">
+    <div id="Quantityhelp" class="form-text mb-3">Enter the Quantity for the Product.</div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endblock body %}
