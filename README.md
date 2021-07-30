@@ -31,6 +31,8 @@ I have successfully built the assignment in a **Django** environment.
 Username: shash
 passwd: admin
 
-The code is completely working and the project was completed by me personally.
+The most of the backend is is the views.py file, I built this project as a learning project while getting familiar with django.
+The project has various small features like messages and import_export in the project.
+I used bootstrap for the front end designing as a templated and made changes acoording to my taste and needs.
 There is the complete code on the repository and the static folder is empty.
-Hoping for a positive response.
+
